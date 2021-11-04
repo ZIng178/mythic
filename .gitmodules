@@ -1,3 +1,3 @@
-[submodule "mythicBackEnd"]
-	path = mythicBackEnd
-	url = https://github.com/ZIng178/mythicBackEnd.git
+[submodule "client"]
+	path = client
+	url = https://github.com/ZIng178/responsive-ecommerce.git
