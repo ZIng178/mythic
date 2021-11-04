@@ -1,3 +1,3 @@
-[submodule "client"]
-	path = client
+[submodule "responsive-ecommerce"]
+	path = resposnive-ecommerce
 	url = https://github.com/ZIng178/responsive-ecommerce.git
