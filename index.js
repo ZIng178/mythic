@@ -40,7 +40,7 @@ if (process.env.NODE_ENV === "production") {
   //Set a static foler
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build"));
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
 
