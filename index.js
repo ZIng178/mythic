@@ -25,6 +25,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+app.use(express.static(path.join(__dirname, "./client/build")));
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/api/users", userRoute);
@@ -36,14 +37,13 @@ app.use("/api/checkout", stripeRoute);
 
 ///Serve static assests if in production
 
-if (process.env.NODE_ENV === "production") {
-  //Set a static foler
-  app.use(express.static("client/build"));
-  app.use(express.static("public"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-  });
-}
+//Set a static foler
+// app.use(express.static(path.join(__dirname, "../client/build")));
+
+// app.use(express.static("public"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
+});
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running ");
